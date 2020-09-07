@@ -1,0 +1,29 @@
+<div class="sidenav-overlay" (click)="_d2hDetailsService.isShowCurrentSubscriptions = false"></div>
+
+<div class="sidenav">
+    <img class="sidenav-close clickable" src="/assets/img/btn-AP-close.svg"
+        (click)="_d2hDetailsService.isShowCurrentSubscriptions = false">
+    <div class="sidenav-top"></div>
+    <div class="sidenav-bottom">
+        <div class="card">
+            <div class="card-body">
+                <h3>Current Subscription</h3>
+                <hr />
+                <h5>Currently subscribed packs and channels:</h5>{{currentSubscription.pack}}
+                <span *ngFor="let channel of currentSubscription.channel">
+                    + {{channel}}</span>
+                <span *ngIf="!currentSubscription.pack && currentSubscription.channel.length <= 0;">
+                    You have not subscribed to any pack and channel</span>
+                <hr />
+                <h5>Currently subscribed services:</h5> <span *ngFor="let service of currentSubscription.service">
+                    {{service}}</span>
+                <span *ngIf="currentSubscription.service.length <= 0;">You have not subscribed to any service</span>
+
+                <hr />
+                <h5>Validity:</h5> {{currentSubscription.validity}}
+                <span *ngIf="currentSubscription.validity;">Month</span>
+
+            </div>
+        </div>
+    </div>
+</div>

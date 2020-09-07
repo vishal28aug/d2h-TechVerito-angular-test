@@ -1,0 +1,16 @@
+<div class="sidenav-overlay" (click)="_d2hDetailsService.isShowCurrentBalance = false"></div>
+
+<div class="sidenav">
+    <img class="sidenav-close clickable" src="/assets/img/btn-AP-close.svg"
+        (click)="_d2hDetailsService.isShowCurrentBalance = false">
+    <div class="sidenav-top"></div>
+    <div class="sidenav-bottom">
+        <div class="card">
+            <div class="card-body">
+                <h3>Account Balance</h3>
+                <hr />
+                <h1>{{_d2hDetailsService.currentAccountBalance}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

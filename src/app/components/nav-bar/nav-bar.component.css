@@ -1,0 +1,86 @@
+.nav {
+  height: 60px;
+  background-color: #52e4fbf2;
+  margin-top: 65px;
+  align-content: center;
+}
+
+.logoContent {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  background-color: #51e7fff2;
+  justify-content: center;
+  position: absolute;
+  right: 45%;
+}
+
+.d2h-logo {
+  height: 85px;
+  position: absolute;
+  right: 47%;
+}
+
+.home-link {
+  color: white;
+  font-size: 27px;
+  margin-left: 20px;
+}
+
+hr {
+  margin-top: 70px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1.5px solid white;
+}
+
+
+/* Large desktop */
+@media (min-width: 1200px) {}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+  .logoContent {
+    right: 39%;
+  }
+
+  .d2h-logo {
+    right: 43%;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+  .logoContent {
+    right: 38%;
+  }
+
+  .d2h-logo {
+    right: 44%;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .nav {
+    height: 50px;
+    margin-top: 57px;
+  }
+
+  .logoContent {
+    height: 95px;
+    width: 95px;
+    right: 36%;
+  }
+
+  .d2h-logo {
+    height: 61px;
+    right: 42%
+  }
+
+  .home-link {
+    margin-left: 5px;
+  }
+}

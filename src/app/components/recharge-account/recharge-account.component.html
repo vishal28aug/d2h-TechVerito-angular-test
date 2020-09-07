@@ -1,0 +1,29 @@
+<div class="sidenav-overlay" (click)="_d2hDetailsService.isShowRechargeAccount = false"></div>
+<div class="sidenav">
+  <img class="sidenav-close clickable" src="/assets/img/btn-AP-close.svg"
+    (click)="_d2hDetailsService.isShowRechargeAccount = false">
+  <div class="sidenav-top"></div>
+  <div class="sidenav-bottom">
+    <div class="card">
+      <div class="card-body  col-sm-12 col-md-12 col-lg-12">
+        <h3>Account Recharge</h3>
+        <hr />
+        <div *ngIf="!isValid" class="alert alert-danger">
+          Please enter all details.
+        </div>
+        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+          <input placeholder="Add Recharge Amount" type="number" class="form-control" [(ngModel)]="rechargeAmount"
+            #recharge="ngModel" required (focus)="onFocus()">
+          <div *ngIf="(recharge.invalid && (recharge.dirty || recharge.touched))" class="alert alert-danger">
+            <div *ngIf="recharge.errors.required"> Please enter a recharge amount. </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-outline-info col-sm-12 col-md-12 col-lg-12"
+          (click)="rechargeAccount()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<show-message *ngIf="isShowMessage" [message]="'Recharge sucessfull'"></show-message>

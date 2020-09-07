@@ -1,0 +1,17 @@
+<div (clickOutside)="clickOutSide()">
+  <div class="form-group col-sm-12 col-md-12 col-lg-12">
+    <input type="text" class="form-control" (focus)="onFocus()" [(ngModel)]="textFieldValue" #name="ngModel"
+      [placeholder]="placeholder" required>
+  </div>
+  <div class="suggestions" *ngIf="isShowSuggestion">
+    <ul id="suggestion-list" class="card-panel">
+      <li *ngFor="let suggestion of suggestions; let i = index;" [class.selected-index]="i == selectedIndex"
+        (click)="select(suggestion);" class="clickable" (mouseover)="onHover(i)">
+        {{suggestion}}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="(name.invalid && (name.dirty || name.touched))" class="alert alert-danger col-sm-12 col-md-12 col-lg-12">
+    <div *ngIf="name.errors.required"> {{placeholder}} is required. </div>
+  </div>
+</div>

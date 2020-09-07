@@ -1,0 +1,44 @@
+<div class="home">
+    <label class="home-lable">Welcome to SatTV</label>
+    <div class="home-badges">
+        <span class="badge home-badge clickable" (click)="_d2hDetailsService.isShowCurrentBalance = true">
+            <h2>Current Balance</h2>
+            <h6>View Current balance in the account</h6>
+        </span>
+        <span class="badge home-badge clickable" (click)="_d2hDetailsService.isShowRechargeAccount = true">
+            <h2>Recharge Account</h2>
+            <h6>Recharge to add money in your account</h6>
+        </span>
+        <span class="badge home-badge clickable" routerLink="/catalog">
+            <h2>Subscription catalog</h2>
+            <h6>View available pack, Channels and Services</h6>
+        </span>
+        <span class="badge home-badge clickable" (click)="_d2hDetailsService.isShowSubscribePack = true">
+            <h2>Subscribe Pack</h2>
+            <h6>Subscribe to base packs</h6>
+        </span>
+        <span class="badge home-badge clickable" (click)="_d2hDetailsService.isShowSubscribeChannel = true">
+            <h2>Add Channels</h2>
+            <h6>Add channels to on existing Subscription</h6>
+        </span>
+        <span class="badge home-badge clickable" (click)="_d2hDetailsService.isShowSubscribeService = true">
+            <h2>Special Services</h2>
+            <h6>Subscribe to special services</h6>
+        </span>
+        <span class="badge home-badge clickable" (click)="_d2hDetailsService.isShowCurrentSubscriptions = true">
+            <h2>View Current Subscription</h2>
+            <h6>View currently subscribed pacls, channels and services for your account</h6>
+        </span>
+        <span class="badge home-badge clickable" routerLink="/update">
+            <h2>Update notification details</h2>
+            <h6>Update email and phone number for notifications</h6>
+        </span>
+    </div>
+</div>
+
+<current-balance *ngIf="_d2hDetailsService.isShowCurrentBalance"></current-balance>
+<recharge-account *ngIf="_d2hDetailsService.isShowRechargeAccount"></recharge-account>
+<subscribe-pack *ngIf="_d2hDetailsService.isShowSubscribePack"></subscribe-pack>
+<add-channels *ngIf="_d2hDetailsService.isShowSubscribeChannel"></add-channels>
+<special-services *ngIf="_d2hDetailsService.isShowSubscribeService"></special-services>
+<view-current-subscription *ngIf="_d2hDetailsService.isShowCurrentSubscriptions"></view-current-subscription>

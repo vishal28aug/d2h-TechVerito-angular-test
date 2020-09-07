@@ -1,0 +1,27 @@
+<div class="sidenav-overlay" (click)="_d2hDetailsService.isShowSubscribeService = false"></div>
+
+<div class="sidenav">
+    <img class="sidenav-close clickable" src="/assets/img/btn-AP-close.svg"
+        (click)="_d2hDetailsService.isShowSubscribeService = false">
+    <div class="sidenav-top"></div>
+    <div class="sidenav-bottom">
+        <div class="card">
+            <div class="card-body">
+                <h3>Add Service</h3>
+                <hr />
+                <div *ngIf="!isValid" class="alert alert-danger">
+                    Please enter all details. 
+                 </div>
+                <div class="form-group" style="display: flex;">
+                    <autocomplete class="col-sm-12 col-md-12 col-lg-12" [placeholder]="'Enter Service Name'"                        
+                        (getTextValue)="getTextValue($event)" [suggestions]="services"></autocomplete>
+                </div>
+                <button type="submit" class="btn btn-outline-info col-sm-12 col-md-12 col-lg-12"
+                    (click)="subscribeService()">Add Service</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<show-message *ngIf="isShowMessage" [message]="'You have successfuly subscribed to service'"></show-message>

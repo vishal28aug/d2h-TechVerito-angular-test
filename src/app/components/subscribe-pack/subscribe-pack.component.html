@@ -1,0 +1,34 @@
+<div class="sidenav-overlay" (click)="_d2hDetailsService.isShowSubscribePack = false"></div>
+<div class="sidenav">
+  <img class="sidenav-close clickable" src="/assets/img/btn-AP-close.svg"
+    (click)="_d2hDetailsService.isShowSubscribePack = false">
+  <div class="sidenav-top"></div>
+  <div class="sidenav-bottom">
+    <div class="card">
+      <div class="card-body  col-sm-12 col-md-12 col-lg-12">
+        <h3>Subscribe pack</h3>
+        <hr />
+        <div *ngIf="!isValid" class="alert alert-danger">
+          Please enter all details. 
+       </div>
+        <div class="form-group ">
+          <autocomplete [placeholder]="'Enter Pack Name (Enter G for Gold and S for Silver)'"
+            (getTextValue)="getTextValue($event)" [suggestions]="packs"></autocomplete>
+        </div>
+
+        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+          <div><input placeholder="Enter Total Month" type="text" class="form-control" [(ngModel)]="packMonth"
+              #pack="ngModel" required (focus)="onFocus()"></div>
+          <div *ngIf="(pack.invalid && (pack.dirty || pack.touched))" class="alert alert-danger">
+            <div *ngIf="pack.errors.required"> Enter Total Month is required. </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-outline-info col-sm-12 col-md-12 col-lg-12"
+          (click)="subscribePack()">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<show-message *ngIf="isShowMessage" [message]="'You have successfuly subscribed to pack'"></show-message>

@@ -1,0 +1,26 @@
+.home {
+  text-align: center;
+}
+
+.home-lable {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.home-badges {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 30px 0px 30px;
+  justify-content: center;
+}
+
+.home-badge {
+  background-color: #51e7fff2;
+  color: white;
+  margin: 15px;
+  width: 350px;
+  min-height: 80px;
+  white-space: pre-wrap;
+  border-radius: 10px;
+}

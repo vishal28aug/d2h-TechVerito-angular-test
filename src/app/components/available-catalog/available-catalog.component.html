@@ -1,0 +1,36 @@
+<div class="catalog-container">
+  <h2 class="catalog-label">Available Catalog</h2>
+  <div class="catalog-available-packs">
+    <span class="navbar">Available Packs</span>
+    <div class="available-pack">
+      <div class="packs clickable" *ngFor="let pack of availablePacks">
+        <div class="pack-title">
+          <h5>{{pack.name}} - ₹ {{pack.price}}</h5>
+          <h6>Subscription Pack</h6>
+        </div>
+        <hr />
+        <ul>
+          <li *ngFor="let channel of pack.channels">{{channel.name}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="catalog-available-channels">
+    <span class="navbar">Available Channels</span>
+    <div class="available-channels">
+      <div class="channel" *ngFor="let channel of availableChannels">
+        <h2><span class="badge badge-light clickable">₹ {{channel.price}} | {{channel.name}}</span></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="catalog-available-services">
+    <span class="navbar">Available Services</span>
+    <div class="available-services">
+      <div class="service" *ngFor="let service of availableServices">
+        <h2><span class="badge badge-light clickable">₹ {{service.price}} | {{service.name}}</span></h2>
+      </div>
+    </div>
+  </div>
+</div>
